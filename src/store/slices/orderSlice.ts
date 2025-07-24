@@ -3,6 +3,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 // Order item type
 export interface OrderItem {
+  id: Key | null | undefined;
   name: string;
   quantity: number;
   price: number;
@@ -11,6 +12,12 @@ export interface OrderItem {
 
 // Keep this type as it's the one you're actively using for incoming orders
 export type Order = {
+  customerPhone: ReactNode;
+  orderTime: string | number | Date;
+  paymentMethod: ReactNode;
+  customerName: string;
+  totalAmount: number;
+  id: Key | null | undefined;
   _id: string; // This is the ID you're using in your notification component
   userId: string;
   restaurantId: string;
@@ -36,6 +43,7 @@ export type Order = {
 
 // State shape
 interface OrderState {
+  orders: any;
   activeOrders: Order[];
   orderHistory: Order[];
   notifications: Order[];

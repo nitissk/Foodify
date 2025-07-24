@@ -3,6 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface RestaurantInfoT {
+  cuisine(cuisine: any): unknown;
+  totalOrders: number;
+  rating: ReactNode;
+  id: any;
   _id: string;
   name: string;
   description: string;

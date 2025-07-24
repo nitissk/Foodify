@@ -8,7 +8,7 @@ import axios from "axios";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   // const { setUserEmail, setOtp } = useResetFlow();
@@ -26,9 +26,12 @@ export default function ForgotPassword() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:3005/manager/forgot-password", {
-        email,
-      });
+      const response = await axios.post(
+        "http://localhost:3005/manager/forgot-password",
+        {
+          email,
+        }
+      );
 
       console.log(response.data);
 
@@ -40,7 +43,8 @@ export default function ForgotPassword() {
       // navigate("/reset-password");
     } catch (err: any) {
       setError(
-        err.response?.data?.message || "Something went wrong. Please try again later."
+        err.response?.data?.message ||
+          "Something went wrong. Please try again later."
       );
       console.error(err);
     }
@@ -82,9 +86,7 @@ export default function ForgotPassword() {
             required
           />
 
-          {error && (
-            <p className="text-red-500 text-sm mt-2">{error}</p>
-          )}
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
           <button
             type="submit"

@@ -199,11 +199,11 @@ const Home = () => {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <span className="text-gray-600">Cuisine:</span>
-                <p className="font-medium">
+                {/* <p className="font-medium">
                   {Array.isArray(restaurantInfo.cuisine)
                     ? restaurantInfo.cuisine.join(", ")
                     : "N/A"}
-                </p>
+                </p> */}
               </div>
               <div>
                 <span className="text-gray-600">Total Orders:</span>

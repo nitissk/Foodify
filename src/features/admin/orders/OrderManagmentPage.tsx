@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { mockOrderData as initialOrderData, type Order } from "./mockOrder";
 
 const OrderManagmentPage = () => {
-  const [orderDetails, setOrderDetails] = useState<Order[]>(initialOrderData);
+  const [orderDetails] = useState<Order[]>(initialOrderData);
   const [filterStatus, setFilterStatus] = useState<string>("All");
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
